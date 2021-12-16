@@ -8,12 +8,12 @@ choices = ["Rock", "Paper", "Scissors"]
 player_score = 0
 enemy_score = 0
 
-enemy_throw = random.choice(choices)
+enemy_throw = random.choice(choices).lower()
 cont = "Y"
 while cont == "Y" or cont == "y":
     print("Rock, Paper, Scissors.......")
     print("Player, maker your choice ")
-    player_throw = input()
+    player_throw = input().lower()
     time.sleep(2)
     print("Get ready!")
     time.sleep(2)
@@ -31,8 +31,8 @@ while cont == "Y" or cont == "y":
         print("It's a tie! Throw again to settle a winner")
         print("Rock, Paper, Scissors.......")
         print("Player, maker your choice ")
-        enemy_throw = random.choice(choices)
-        player_throw = input()
+        enemy_throw = random.choice(choices).lower()
+        player_throw = input().lower()
         time.sleep(2)
         print("Get ready!")
         time.sleep(2)
@@ -46,7 +46,9 @@ while cont == "Y" or cont == "y":
         print("")
         print(f"Computer threw {enemy_throw}!")
 
-    if (player_throw == "Rock" and enemy_throw == "Scissors") or (player_throw == "Paper" and enemy_throw == "Rock") or (player_throw == "Scissors" and enemy_throw == "Paper"):
+    time.sleep(2)
+    
+    if (player_throw == "rock" and enemy_throw == "scissors") or (player_throw == "paper" and enemy_throw == "rock") or (player_throw == "scissors" and enemy_throw == "paper"):
         print("Player 1 wins!")
         player_score += 1
     else:
